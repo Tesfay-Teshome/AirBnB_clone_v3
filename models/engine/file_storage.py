@@ -96,4 +96,5 @@ class FileStorage:
 
         else:
             count = len(models.storage.all(cls).values())
+
         return count
