@@ -95,6 +95,7 @@ class DBStorage:
         count the number of objects in storage
         """
         all_class = classes.values()
+
         if not cls:
             count = 0
             for clas in all_class:
