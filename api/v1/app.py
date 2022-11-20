@@ -19,6 +19,12 @@ def close(code):
     """call the close method of storage"""
     storage.close()
 
+@app.errorhandler(exceptions.NotFound)
+def custom_404(e):
+    """render 404 page"""
+    error_response = {"error": "Not found"}
+    return jsonify(error_response), 404
+
 if __name__ == "__main__":
     host = getenv("HBNB_API_HOST", "0.0.0.0.")
     port = getenv("HBNB_API_PORT", 5000)
