@@ -13,11 +13,13 @@ stat_dict = {
     "users": "Users"
 }
 
+
 @app_views.route('/status', strict_slashes=False)
 def status():
     """return the status of the api"""
     status = {"status": "OK"}
     return jsonify(status)
+
 
 @app_views.route('/stats', strict_slashes=False)
 def stats():
@@ -28,4 +30,3 @@ def stats():
     for key, Value in stat_dict.items():
         stat[key] = storage.count(Value)
     return jsonify(stat)
-
